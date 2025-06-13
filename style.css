@@ -1,0 +1,128 @@
+/* General body style update */
+body {
+    font-family: 'Futura', sans-serif; /* Fallback to sans-serif if Futura is not available */
+    color: white;
+    background-color: black; /* Ensure this is here if not already */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 18px; /* Increased base font size */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px; /* Space below title */
+}
+
+header h1 {
+    font-size: 3em; /* Larger title font size */
+    font-weight: bold;
+    margin: 0; /* Remove default h1 margin if needed */
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+    gap: 20px; /* Space between grid items */
+    max-width: 1200px; /* Max width of the gallery */
+    margin: auto; /* Center the gallery */
+}
+
+/* Video item adjustments */
+.video-item {
+    background-color: #1a1a1a;
+    padding: 20px; /* Increased padding */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 10px; /* Consistent gap between stacked items */
+}
+
+.video-item iframe {
+    width: 100%; /* Take full width of .video-item's content box */
+    max-width: 560px; /* Larger max-width for the video */
+    aspect-ratio: 16/9; /* Maintain 16:9 aspect ratio */
+    border-radius: 4px;
+    border: none; /* Explicitly remove iframe border */
+}
+
+.video-item h3 {
+    font-size: 1.4em; /* "Not so small" */
+    font-weight: bold;
+    color: white; /* Ensure color if not inherited */
+    margin: 10px 0 5px 0; /* Top and bottom margin */
+    text-align: center; /* Center title */
+}
+
+.video-item p {
+    font-size: 0.9em; /* Smaller font */
+    font-weight: normal; /* Not bold */
+    color: #e0e0e0; /* Slightly dimmer white for description */
+    line-height: 1.5;
+    text-align: center; /* Center description */
+    margin: 0 0 15px 0; /* Bottom margin before link */
+}
+
+.details-link {
+    color: #87CEFA;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px; /* Add some padding to make it more button-like */
+    border: 1px solid #87CEFA; /* Optional: border */
+    border-radius: 4px; /* Optional: rounded corners */
+    margin-left: auto; /* Push to the right */
+    margin-right: 0; /* Ensure it aligns to the very right */
+    display: inline-block; /* So margin-left: auto works */
+}
+
+.details-link:hover {
+    text-decoration: underline;
+    background-color: rgba(135, 206, 250, 0.1); /* Slight background on hover */
+}
+
+/* Removed .video-text-content styles as the class is no longer used */
+/* Styles for .video-item img are no longer needed as img tags were replaced by iframes */
+/* Styles for .modal, .modal-content, .modal-content iframe, .close-button are removed */
+
+/* SoundCloud Section Styles */
+.soundcloud-section {
+    text-align: center; /* Center the introductory text and the iframe block */
+    margin-top: 60px;   /* Space above this section */
+    padding: 30px 20px;   /* Padding top/bottom and left/right */
+    border-top: 1px solid #444; /* Subtle separator line */
+    clear: both; /* Ensure it clears any floated elements, though not expected here */
+}
+
+.soundcloud-section .soundcloud-intro {
+    font-size: 1.1em;  /* Or your preferred size */
+    line-height: 1.6;
+    color: #e0e0e0;    /* Slightly dimmer white, or inherit body's white */
+    margin-bottom: 25px; /* Space between intro text and SoundCloud player */
+    max-width: 800px;  /* Constrain line length for readability */
+    margin-left: auto; /* Center the paragraph if it's narrower than section */
+    margin-right: auto;/* Center the paragraph */
+}
+
+.soundcloud-section iframe {
+    border: none; /* Ensure no iframe border from browser defaults */
+    max-width: 700px; /* Max width for the player */
+    /* width="100%" is set inline on iframe, this max-width will constrain it */
+    /* height="300" is set inline, which is typical for this type of embed */
+    /* display: block; if margin auto isn't centering, but iframe is usually inline-block like */
+    margin-left: auto; /* Helps center if max-width is applied and parent is text-align:center */
+    margin-right: auto;
+}
+
+/* The div with SoundCloud links already has inline styles.
+   If specific overrides for its font to match Futura are desired, they can be added here.
+   Example (optional, if the default SC font is too jarring):
+   .soundcloud-section div[style*="font-family: Interstate"] {
+       font-family: 'Futura', sans-serif !important;
+       color: #aaa !important; // Adjust color if needed
+   }
+   .soundcloud-section div[style*="font-family: Interstate"] a {
+       color: #bbb !important; // Adjust link color if needed
+   }
+   For now, let's not add this font override unless requested, as SC embeds are often styled by SC.
+*/
